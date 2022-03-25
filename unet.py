@@ -40,25 +40,25 @@ def decoder(inputs,skip_connections,num_filters):
 
 #.............Arcitecture of the Unet modle.............
 
-# def UNet(input_shape):
-#     inputs= Input(input_shape)
-#     s1,p1= encoder(inputs,64)
-#     s2,p2= encoder(p1,128)
-#     s3,p3= encoder(p2,256)
-#     s4,p4= encoder(p3,512)
+def UNet(input_shape):
+    inputs= Input(input_shape)
+    s1,p1= encoder(inputs,64)
+    s2,p2= encoder(p1,128)
+    s3,p3= encoder(p2,256)
+    s4,p4= encoder(p3,512)
 
-#     b1 = conv_block(p4,1024)
+    b1 = conv_block(p4,1024)
 
-#     d1= decoder(b1,s4,512)
-#     d2= decoder(d1,s3,256)
-#     d3= decoder(d2,s2,128)
-#     d4= decoder(d3,s1,64)
+    d1= decoder(b1,s4,512)
+    d2= decoder(d1,s3,256)
+    d3= decoder(d2,s2,128)
+    d4= decoder(d3,s1,64)
 
-#     outputs = Conv2D(1,1,padding='same',activation='sigmoid')(d4)
+    outputs = Conv2D(1,1,padding='same',activation='sigmoid')(d4)
 
-#     model=Model(inputs,outputs,name='UNET')
-#     return model  
-#  
+    model=Model(inputs,outputs,name='UNET')
+    return model  
+ 
 
 if __name__ == "__main__":
     input_shape=(256,256,3)
