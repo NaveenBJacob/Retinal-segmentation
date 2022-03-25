@@ -1,0 +1,11 @@
+abstract
+    what is our papers 
+    what is rectinal segmentation
+    what is the deseases
+introduction(this is more breaf on abstract)
+    (write about included)diabetic retinopaty, rectinal segmentation, cat system for segmentation
+related works(around 20 papers)
+    write about 
+    datasets
+    rectinal segmentation(comparing with various model)
+
